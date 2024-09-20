@@ -1,5 +1,7 @@
 public class Refrigerator extends Appliance {
 
+    // Refrigerator Appliance Sub Class
+
     // Variables
     private int numberOfDoors;
     private double height;
@@ -16,8 +18,26 @@ public class Refrigerator extends Appliance {
     // Methods
     @Override
     public String toString() {
-        return "Refrigerator: " + super.toString() + " (" + numberOfDoors + " doors, " + height + "x" + width + " inches)";
+        return "ItemNumber: " + itemNumber + "\n" +
+                "Brand: " + brand + "\n" +
+                "Quantity: " + quantity + "\n" +
+                "Wattage: " + wattage + "\n" +
+                "Color: " + color + "\n" +
+                "Price: " + price + "\n" +
+                "Number of Doors: " + numberOfDoors + "\n" +
+                "Height: " + height + "\n" +
+                "Width: " + width + "\n";
+    }
 
+    // To File Format
+    @Override
+    public String toFileFormat() {
+        return super.commonToFileFormat() + ";" + numberOfDoors + ";" + height + ";" + width;
+    }
+
+    // Getter for numberOfDoors
+    public int getNumberOfDoors() {
+        return numberOfDoors;
     }
 
 }

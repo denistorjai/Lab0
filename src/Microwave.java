@@ -1,5 +1,7 @@
 public class Microwave extends Appliance {
 
+    // Microwave Appliance Subclass
+
     // Variables
     private double capacity;
     private String roomType;
@@ -14,7 +16,25 @@ public class Microwave extends Appliance {
     // Methods
     @Override
     public String toString() {
-        return "Microwave: " + super.toString() + " (" + capacity + " cu ft, Room: " + roomType + ")";
+        return "ItemNumber: " + itemNumber + "\n" +
+                "Brand: " + brand + "\n" +
+                "Quantity: " + quantity + "\n" +
+                "Wattage: " + wattage + "\n" +
+                "Color: " + color + "\n" +
+                "Price: " + price + "\n" +
+                "Capacity: " + capacity + "\n" +
+                "RoomType: " + roomType + "\n";
+    }
+
+    // To File Format Method
+    @Override
+    public String toFileFormat() {
+        return super.commonToFileFormat() + ";" + capacity + ";" + roomType;
+    }
+
+    // Getter for roomType
+    public String getRoomType() {
+        return roomType;
     }
 
 }

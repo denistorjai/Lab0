@@ -1,4 +1,6 @@
-public class Appliance {
+public abstract class Appliance {
+
+    // Super Class
 
     // Variables
     protected String itemNumber;
@@ -19,9 +21,31 @@ public class Appliance {
     }
 
     // Methods
-    @Override
-    public String toString() {
-        return brand + " (Item No: " + itemNumber + ", Price: $" + price + ")";
+    public String commonToFileFormat() {
+        return itemNumber + ";" + brand + ";" + quantity + ";" + wattage + ";" + color + ";" + price;
+    }
+
+    // Abstract Method
+    public abstract String toFileFormat();
+
+    // Getter for itemNumber
+    public String getItemNumber() {
+        return itemNumber;
+    }
+
+    // Getter for brand
+    public String getBrand() {
+        return brand;
+    }
+
+    // Getter for quantity
+    public int getQuantity() {
+        return quantity;
+    }
+
+    // Setter for quantity
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
 }
